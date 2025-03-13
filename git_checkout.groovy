@@ -1,5 +1,5 @@
-def call(String Url, String branch){
+def call(String Url_git, String branch){
   echo "git checkout step"
-  git url:"https://github.com/ghadgerahulaws/Wanderlust-Mega-Project_shubham_londe.git", branch:"main"
+  git url: "${Url_git}" , branch: "${branch}"
   
 }
