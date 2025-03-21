@@ -1,4 +1,4 @@
-def call(String repoUrl, String branch = 'main', String credentialsId = 'github-creds') {
+def call(String repoUrl, String branch = 'main') {
     pipeline {
         agent any
         stages {
@@ -9,8 +9,7 @@ def call(String repoUrl, String branch = 'main', String credentialsId = 'github-
                             $class: 'GitSCM',
                             branches: [[name: "*/${branch}"]],
                             userRemoteConfigs: [[
-                                url: repoUrl,
-                                credentialsId: credentialsId
+                                url: repoUrl
                             ]]
                         ])
                     }
